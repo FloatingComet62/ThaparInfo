@@ -40,6 +40,7 @@
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
       }
-    }
+    },
+    "@monodon/rust"
   ]
 }
