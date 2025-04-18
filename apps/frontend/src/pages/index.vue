@@ -1,3 +1,3 @@
 <template>
-  <NxWelcome title="frontend" />
+  <div>Fuck</div>
 </template>
