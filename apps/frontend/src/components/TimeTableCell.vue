@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="subject">
+  <div :class="'subject ' + data.class_type">
     <div class="name">
       {{ convertSubjectCodeToSubjectName(data.subject_code) }}
     </div>
@@ -30,6 +30,15 @@ const props = defineProps<{
   justify-content: center;
   text-align: center;
   height: 6rem;
+}
+.lecture {
+  background-color: var(--red);
+}
+.tutorial {
+  background-color: var(--blue);
+}
+.lab {
+  background-color: var(--green);
 }
 .smol {
   font-size: 0.8rem;

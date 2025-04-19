@@ -1,8 +1,10 @@
+export type ClassType = 'lecture' | 'tutorial' | 'lab';
 export type Class = {
   subject_code: string;
   location: string;
   instructor: string;
   double_size?: boolean;
+  class_type: ClassType;
 };
 export type TimeSlot =
   0 | 1 | 2 | 3 | 4 | 5 |

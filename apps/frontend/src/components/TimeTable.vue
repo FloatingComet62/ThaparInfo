@@ -109,6 +109,9 @@ export default {
   padding: 0.5rem;
   text-align: center;
   height: 6rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 .double > .subject {
   height: 12.3rem;

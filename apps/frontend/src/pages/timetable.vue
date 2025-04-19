@@ -4,19 +4,46 @@ import { TimeTable as TimeTableT } from '../components/timetable_type';
 import Timetable from '../components/TimeTable.vue';
 
 const batches = [
-  'Item 1',
-  'Item 2',
-  'Item 3',
-  'Item 4',
-  'Item 5',
+  '1X11',
+  '1X12',
+  '1X13',
+  '1X14',
+  '1X15',
 ];
 const years = ['Year 1', 'Year 2', 'Year 3', 'Year 4'];
 const timetable_data: TimeTableT = {
-  Monday: {'0': { subject_code: 'UCS101', location: 'LP103', instructor: 'VVK' }},
-  Tuesday: {'1': { subject_code: 'UCS101', location: 'CED/CAD', instructor: 'VVK', double_size: true }},
-  Wednesday: {'5': { subject_code: 'UCS101', location: 'LP103', instructor: 'VVK' }},
-  Thursday: {'10': { subject_code: 'UCS101', location: 'LP103', instructor: 'VVK' }},
-  Friday: {'7': { subject_code: 'UCS101', location: 'LP103', instructor: 'VVK' }},
+  Monday: {
+    '7': { subject_code: 'UPH013', location: 'T301', instructor: 'VVK', class_type: 'tutorial' },
+    '8': { subject_code: 'UES102', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+    '9': { subject_code: 'UPH013', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+    '10': { subject_code: 'UES101', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+  },
+  Tuesday: {
+    '1': { subject_code: 'UMA023', location: 'T104', instructor: 'VVK', class_type: 'tutorial' },
+    '2': { subject_code: 'UMA023', location: 'LP106', instructor: 'VVK', class_type: 'lecture' },
+    '7': { subject_code: 'UHU003', location: 'C309', instructor: 'VVK', double_size: true,  class_type: 'lab' },
+    '9': { subject_code: 'UHU003', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
+    '10': { subject_code: 'UPH013', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
+  },
+  Wednesday: {
+    '0': { subject_code: 'UES101', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+    '1': { subject_code: 'UAI201', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+    '2': { subject_code: 'UMA023', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+    '3': { subject_code: 'UES102', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+    '4': { subject_code: 'UCS101', location: 'ML-LAB', instructor: 'VVK', double_size: true, class_type: 'lab' },
+  },
+  Thursday: {
+    '4': { subject_code: 'UPH013', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+    '5': { subject_code: 'UMA023', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
+  },
+  Friday: {
+    '1': { subject_code: 'UAI201', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
+    '2': { subject_code: 'UHU003', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
+    '3': { subject_code: 'UES102', location: 'W/Shop', instructor: 'VVK', class_type: 'lab' },
+    '4': { subject_code: 'UES101', location: 'F311', instructor: 'VVK', double_size: true, class_type: 'tutorial' },
+    '7': { subject_code: 'UPH013', location: 'G324', instructor: 'VVK', double_size: true, class_type: 'lab' },
+    '9': { subject_code: 'UES101', location: 'CED CAD', instructor: 'VVK', double_size: true, class_type: 'lab' },
+  },
 }
 
 export default {
