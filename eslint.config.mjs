@@ -37,6 +37,8 @@ export default [
       '**/*.mjs',
     ],
     // Override or add rules here
-    rules: {},
+    rules: {
+      'vue/valid-v-for': 'off',
+    },
   },
 ];
