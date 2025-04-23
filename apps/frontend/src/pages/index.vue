@@ -3,7 +3,7 @@
     <NuxtLink to="/timetable">
       <div class="button">
         <img
-          src="~/assets/timetable.svg"
+          src="~/assets/timetable_icon.svg"
           alt="Timetable"
         />
         <div class="text">
@@ -14,7 +14,7 @@
     <NuxtLink to="/map">
       <div class="button">
         <img
-          src="~/assets/map.svg"
+          src="~/assets/map_icon.svg"
           alt="Map"
         />
         <div class="text">

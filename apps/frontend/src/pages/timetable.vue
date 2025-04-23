@@ -19,8 +19,8 @@ const timetable_data: TimeTableT = {
     '10': { subject_code: 'UES101', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
   },
   Tuesday: {
-    '1': { subject_code: 'UMA023', location: 'T104', instructor: 'VVK', class_type: 'tutorial' },
     '2': { subject_code: 'UMA023', location: 'LP106', instructor: 'VVK', class_type: 'lecture' },
+    '3': { subject_code: 'UMA023', location: 'T104', instructor: 'VVK', class_type: 'tutorial' },
     '7': { subject_code: 'UHU003', location: 'C309', instructor: 'VVK', double_size: true,  class_type: 'lab' },
     '9': { subject_code: 'UHU003', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
     '10': { subject_code: 'UPH013', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
@@ -37,9 +37,9 @@ const timetable_data: TimeTableT = {
     '5': { subject_code: 'UMA023', location: 'LP103', instructor: 'VVK', class_type: 'lecture' },
   },
   Friday: {
-    '1': { subject_code: 'UAI201', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
-    '2': { subject_code: 'UHU003', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
-    '3': { subject_code: 'UES102', location: 'W/Shop', instructor: 'VVK', class_type: 'lab' },
+    '0': { subject_code: 'UAI201', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
+    '1': { subject_code: 'UHU003', location: 'LP104', instructor: 'VVK', class_type: 'lecture' },
+    '2': { subject_code: 'UES102', location: 'W/Shop', instructor: 'VVK', double_size: true, class_type: 'lab' },
     '4': { subject_code: 'UES101', location: 'F311', instructor: 'VVK', double_size: true, class_type: 'tutorial' },
     '7': { subject_code: 'UPH013', location: 'G324', instructor: 'VVK', double_size: true, class_type: 'lab' },
     '9': { subject_code: 'UES101', location: 'CED CAD', instructor: 'VVK', double_size: true, class_type: 'lab' },
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <template>
-  <main>
+  <div class="main">
     <div class="config">
       <multiselect
         v-model="year_value"
@@ -83,17 +83,19 @@ export default {
       </multiselect>
     </div>
     <Timetable :timetable="timetable_data" />
-  </main>
+  </div>
 </template>
 
 <style>
-main {
+.main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  height: 100%;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  height: 100vh;
 }
 .config {
   display: flex;
@@ -128,12 +130,4 @@ main {
   background-color: var(--black2);
   font-weight: 800;
 }
-/*@media (min-width: 768px) {
-  .about {
-    max-width: 768px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1rem;
-  }
-} */
 </style>
