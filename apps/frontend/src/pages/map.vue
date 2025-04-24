@@ -1,5 +1,6 @@
 <script lang="ts">
 import { buildingCodeFromLocation } from '../scripts/building';
+import fmt from '../scripts/fmt';
 export default {
   data() {
     const route = useRoute();
@@ -10,6 +11,12 @@ export default {
     }
   },
   mounted() {
+    for (const item of (this.$refs.map_svg as any).querySelectorAll(':scope > *:not(.road)')) {
+      item.addEventListener('mouseenter', () => {
+        this.description = fmt(item.getAttribute('id'));
+      })
+    }
+
     if (this.target == null) {
       return;
     }
@@ -23,11 +30,6 @@ export default {
       element.classList.add('highlighted');
     }, 100);
 
-    for (const item of (this.$refs.map_svg as any).querySelectorAll(':scope > *:not(.road)')) {
-      item.addEventListener('mouseenter', () => {
-        this.description = item.getAttribute('id');
-      })
-    }
   }
 }
 </script>
@@ -460,7 +462,7 @@ export default {
         fill="#D9A762"
       />
       <rect
-        ref="guru dwara" id="guru dwara"
+        ref="gurudwara" id="gurudwara"
         x="289"
         y="548"
         width="50"
