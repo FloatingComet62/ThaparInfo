@@ -12,9 +12,9 @@ const props = defineProps<{
     <div class="name">
       {{ convertSubjectCodeToSubjectName(data.subject_code) }}
     </div>
-    <div class="smol location">
+    <a :href="'/map?target=' + data.location" class="location">
       {{ data.location }}
-    </div>
+    </a>
     <div class="smol instructor">
       {{ convertInstructorCodeToInstructorName(data.instructor) }}
     </div>
@@ -33,6 +33,7 @@ const props = defineProps<{
 }
 .lecture {
   background-color: var(--red);
+  cursor: pointer;
 }
 .tutorial {
   background-color: var(--blue);

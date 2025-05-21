@@ -1,7 +1,8 @@
 <script lang="ts">
-import Multiselect from 'vue-multiselect'
 import { TimeTable as TimeTableT } from '../components/timetable_type';
 import Timetable from '../components/TimeTable.vue';
+import YearPicker from '../components/YearPicker.vue';
+import BatchPicker from '../components/BatchPicker.vue';
 
 const batches = [
   '1X11',
@@ -48,8 +49,9 @@ const timetable_data: TimeTableT = {
 
 export default {
   components: {
-    Multiselect,
-    Timetable
+    Timetable,
+    YearPicker,
+    BatchPicker
   },
   data () {
     return {
@@ -66,23 +68,18 @@ export default {
 <template>
   <div class="main">
     <div class="config">
-      <multiselect
-        v-model="year_value"
-        class="select"
-        :options="years"
-        :searchable="false"
+      <YearPicker
+        :years="years"
+        :current-year="year_value"
+        :set-year="year => year_value = year"
       />
-      <multiselect
-        v-model="batch_value"
-        class="select"
-        :options="batches"
-      >
-        <template #noResult>
-          No batches found
-        </template>
-      </multiselect>
+      <BatchPicker
+        :batches="batches"
+        :current-batch="batch_value"
+        :set-batch="batch => batch_value = batch"
+      />
     </div>
-    <Timetable :timetable="timetable_data" />
+    <Timetable class="timetable" :timetable="timetable_data" />
   </div>
 </template>
 
@@ -95,7 +92,8 @@ export default {
   gap: 1rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  height: 100vh;
+}
+.timetable {
 }
 .config {
   display: flex;
