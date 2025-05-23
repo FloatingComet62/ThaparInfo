@@ -1,0 +1,34 @@
+@use '../../../variables.scss';
+
+.blank {
+  opacity: 0;
+}
+.table {
+  display: flex;
+  gap: 0.3rem;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.time {
+  background-color: $grey1;
+  padding: 0.5rem;
+  text-align: center;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.double > .subject {
+  height: 12.3rem;
+}
+.cell {
+  background-color: $grey2;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 6rem;
+}

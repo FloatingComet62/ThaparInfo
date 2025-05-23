@@ -1,0 +1,83 @@
+@use '../../../variables.scss' as *;
+
+.map_main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-color: $black1;
+}
+.sidebar {
+  height: 100vh;
+  background-color: $black2;
+}
+.building_search {
+  padding: 1rem;
+  outline: none;
+  text-align: center;
+  background-color: $black1;
+  color: $white;
+  font-size: 1rem;
+}
+.sidebar_title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.sidebar_content {
+  width: 20vw;
+  overflow: scroll;
+  height: 80vh;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style-type: none;
+      text-align: center;;
+      margin: 0.5rem 0;
+      padding: 0.5rem 0;
+      cursor: pointer;
+      &:hover {
+        background-color: $black1;
+        list-style-type: none;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}
+.map {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+}
+.highlighted {
+  fill: gold;
+  stroke: gold;
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0 0 5px gold);
+  filter: drop-shadow(0 0 10px gold);
+  filter: drop-shadow(0 0 15px gold);
+  filter: drop-shadow(0 0 20px gold);
+  filter: drop-shadow(0 0 25px gold);
+
+  /*
+  this is an svg path
+  it will glow golden all the time
+  and will be slightly scaled up in size
+  */
+  &>* {
+    fill: gold;
+    stroke: gold;
+  }
+}
+svg > *:not(.road):hover {
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0 0 5px gold);
+}

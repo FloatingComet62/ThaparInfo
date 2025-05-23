@@ -1,0 +1,26 @@
+<div class="table">
+  <div class="column">
+    @for (time of times; track time) {
+      <div class="time">
+        {{ time }}
+      </div>
+    }
+  </div>
+  @for (data of formatTimeTable(); track data) {
+    <div (class)="'column ' + data.dayName">
+      @for (idx of removeDoubleOverlaps(timeslots, data.data); track idx) {
+        @if (data.data[idx]) {
+          <div (class)="data.data[idx].double_size ? 'double' : ''">
+            <app-timetable-cell (data)="data.data[idx]" />
+          </div>
+        } @else {
+          <div class="cell">
+            <div class="blank">
+              Free {{ idx }}
+            </div>
+          </div>
+        }
+      }
+    </div>
+  }
+</div>

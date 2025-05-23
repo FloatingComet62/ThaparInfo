@@ -1,41 +1,37 @@
 {
-  "name": "@thaparinfo//source",
+  "name": "thaparinfo",
   "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
-  "private": true,
-  "devDependencies": {
-    "@eslint/eslintrc": "^2.1.1",
-    "@eslint/js": "^9.8.0",
-    "@monodon/rust": "^2.3.0",
-    "@nuxt/devtools": "1.0.0",
-    "@nuxt/eslint-config": "~0.5.6",
-    "@nuxt/kit": "^3.10.0",
-    "@nuxt/ui-templates": "^1.3.1",
-    "@nx/eslint": "20.8.0",
-    "@nx/eslint-plugin": "20.8.0",
-    "@nx/js": "20.8.0",
-    "@nx/nuxt": "20.8.0",
-    "@nx/vite": "20.8.0",
-    "@nx/workspace": "20.8.0",
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
-    "eslint": "^9.8.0",
-    "eslint-config-prettier": "^10.0.0",
-    "h3": "^1.8.2",
-    "nuxt": "^3.10.0",
-    "nx": "20.8.0",
-    "prettier": "^2.6.2",
-    "sass": "1.62.1",
-    "tslib": "^2.3.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.19.0",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "vue-tsc": "^2.2.8"
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
-  "workspaces": [
-    "apps/*"
-  ]
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/compiler": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
+    "@angular/platform-browser": "^19.2.0",
+    "@angular/platform-browser-dynamic": "^19.2.0",
+    "@angular/router": "^19.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.13",
+    "@angular/cli": "^19.2.13",
+    "@angular/compiler-cli": "^19.2.0",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.7.2"
+  }
 }

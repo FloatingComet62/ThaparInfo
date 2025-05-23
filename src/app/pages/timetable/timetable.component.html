@@ -1,0 +1,15 @@
+<div class="main">
+  <div class="config">
+    <app-year-picker
+      (years)="years"
+      (currentyear)="currentyear"
+      (setyear)="setyear($event)"
+    />
+    <app-batch-picker
+      (batches)="batches"
+      (currentbatch)="currentbatch"
+      (setbatch)="setbatch($event)"
+    />
+  </div>
+  <app-timetable-component class="timetable" (timetable)="getTimetable()" />
+</div>

@@ -1,0 +1,11 @@
+<div (class)="'subject ' + class_type">
+    <div class="name">
+      {{ convertSubjectCodeToSubjectName(subject_code) }}
+    </div>
+    <a (href)="'/map?target=' + location" class="location">
+      {{ location }}
+    </a>
+    <div class="smol instructor">
+      {{ convertInstructorCodeToInstructorName(instructor) }}
+    </div>
+  </div>
