@@ -4,6 +4,7 @@
  * bc_corridor => BC Corridor
  * lpXXX_XXX => LP XXX-XXX
  * lt => LT
+ * lXXX => CS Block
  * cs_block => CS Block
  * tan => Tan
  * b_block => B Block
@@ -17,6 +18,9 @@
 export default (str: string): string => {
   if (/^lp\d{3}_\d{3}$/i.test(str)) {
     return str.replace(/^lp(\d{3})_(\d{3})$/i, "LP $1-$2");
+  }
+  if (/^l\d{3}$/i.test(str)) {
+    return str.replace(/^l(\d{3})$/i, "CS Block");
   }
 
   const mappings: { [key: string]: string } = {

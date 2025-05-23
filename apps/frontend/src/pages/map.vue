@@ -70,10 +70,7 @@ export default {
       },
       filterBuildings(searchTerm: string) {
         searchTerm = searchTerm.toLowerCase().trim();
-        if (searchTerm.length == 0) {
-          this.buildings = this.allBuildings.slice(0);
-        }
-        this.buildings = this.buildings.filter((building) => {
+        this.buildings = this.allBuildings.filter((building) => {
           return building.toLowerCase().includes(searchTerm);
         });
       },

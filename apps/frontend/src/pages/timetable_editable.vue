@@ -3,7 +3,6 @@ import { PartialTimeTable, TimeTable as TimeTableT } from '../components/timetab
 import Timetable from '../components/TimeTable.vue';
 import YearPicker from '../components/YearPicker.vue';
 import BatchPicker from '../components/BatchPicker.vue';
-import { setEmitFlags } from 'typescript';
 
 function combineEdits(unedited: TimeTableT, edits: PartialTimeTable): TimeTableT {
   const output = structuredClone(unedited);
@@ -62,6 +61,16 @@ const originalData: TimeTableT = {
 
 }
 
+const edits: PartialTimeTable[] = [
+  { Monday: { '7': null } },
+  { Monday: { '6': { subject_code: 'UHU003', location: 'LP104', instructor: 'VVK', class_type: 'lecture', double_size: true } } },
+];
+
+let timetable_data = originalData;
+for (const edit of edits) {
+  timetable_data = combineEdits(timetable_data, edit);
+}
+
 export default {
   components: {
     Timetable,
@@ -74,24 +83,8 @@ export default {
       batches,
       year_value: '',
       years,
-      timetable_data: {
-        Monday: {},
-        Tuesday: {},
-        Wednesday: {},
-        Thursday: {},
-        Friday: {},
-      } as TimeTableT,
+      timetable_data,
     }
-  },
-  mounted() {
-    const edits: PartialTimeTable[] = JSON.parse(localStorage.getItem("edits") || '[]');
-
-    let timetable_data = originalData;
-    for (const edit of edits) {
-      timetable_data = combineEdits(timetable_data, edit);
-    }
-    console.log(timetable_data);
-    this.timetable_data = timetable_data;
   }
 }
 </script>

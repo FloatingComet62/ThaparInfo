@@ -31,15 +31,15 @@ const formatted: {
   { dayName: 'Thursday', data: props.timetable.Thursday, is_current_day: false },
   { dayName: 'Friday', data: props.timetable.Friday, is_current_day: false },
 ]
-for (const data of formatted) {
-  for (const idx of timeslots) {
-    console.table({
-      data,
-      idx,
-      last_slot: !(data.data[idx - 1 as TimeSlot]?.double_size),
-  });
-  }
-}
+// for (const data of formatted) {
+//   for (const idx of timeslots) {
+//     console.table({
+//       data,
+//       idx,
+//       last_slot: !(data.data[idx - 1 as TimeSlot]?.double_size),
+//   });
+//   }
+// }
 
 function removeDoubleOverlaps(time_slots: TimeSlot[], data: Day): TimeSlot[] {
   return time_slots.filter((idx) => !(data[idx - 1 as TimeSlot]?.double_size))

@@ -29,3 +29,14 @@ export type TimeTable = {
   Thursday: Day;
   Friday: Day;
 };
+export type KeysNullable<T> = {
+  [K in keyof T]: T[K] | null;
+};
+
+export type PartialTimeTable = {
+  Monday?: KeysNullable<Day>;
+  Tuesday?: KeysNullable<Day>;
+  Wednesday?: KeysNullable<Day>;
+  Thursday?: KeysNullable<Day>;
+  Friday?: KeysNullable<Day>;
+};
