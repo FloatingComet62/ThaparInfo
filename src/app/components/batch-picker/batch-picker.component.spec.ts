@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BatchPickerComponent } from './batch-picker.component';
 
-describe('BatchPickerComponent', () => {
+describe('YearPickerComponent', () => {
   let component: BatchPickerComponent;
   let fixture: ComponentFixture<BatchPickerComponent>;
 
@@ -10,7 +10,7 @@ describe('BatchPickerComponent', () => {
     await TestBed.configureTestingModule({
       imports: [BatchPickerComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BatchPickerComponent);
     component = fixture.componentInstance;
