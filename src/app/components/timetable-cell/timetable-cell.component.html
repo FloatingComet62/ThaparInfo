@@ -1,8 +1,14 @@
-<div (class)="'subject ' + class_type">
+<div
+  class="subject"
+  [class.lecture]="is_lecture"
+  [class.lab]="is_lab"
+  [class.tutorial]="is_tutorial"
+  [class.double]="double_size"
+>
     <div class="name">
       {{ convertSubjectCodeToSubjectName(subject_code) }}
     </div>
-    <a (href)="'/map?target=' + location" class="location">
+    <a [href]="'/map?target=' + location" class="location">
       {{ location }}
     </a>
     <div class="smol instructor">

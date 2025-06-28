@@ -1,4 +1,4 @@
-@use '../../../variables.scss';
+@import '../../../variables.scss';
 
 .subject {
   background-color: $grey2;
@@ -9,9 +9,14 @@
   text-align: center;
   height: 6rem;
 }
+.location {
+  cursor: pointer;
+}
+.double {
+  height: 12.3rem;
+}
 .lecture {
   background-color: $red;
-  cursor: pointer;
 }
 .tutorial {
   background-color: $blue;

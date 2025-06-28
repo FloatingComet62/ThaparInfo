@@ -1,4 +1,4 @@
-@use '../../../variables.scss';
+@import '../../../variables.scss';
 
 .blank {
   opacity: 0;
@@ -20,9 +20,6 @@
   display: flex;
   align-items: center;
   text-align: center;
-}
-.double > .subject {
-  height: 12.3rem;
 }
 .cell {
   background-color: $grey2;
